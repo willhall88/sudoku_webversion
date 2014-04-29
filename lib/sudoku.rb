@@ -113,4 +113,3 @@ private
   end
 
 end
-⚙Google Analytics
