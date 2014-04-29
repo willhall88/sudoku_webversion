@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Sudoku Game</title>
+	<link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="sudoku">
+<% 3.times do |row| %>
+	<div class='row'>
+		<% 3.times do |box| %>
+		<div class="box">
+			<% 3.times do |cell_row| %>
+			<div class="cell-row">
+				<% 3.times do |cell| %>
+				<div class="cell">
+					<input type="text">
+				</div>
+				<% end %>
+			</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
+</div>
+</body>
+</html>
