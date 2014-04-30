@@ -2,6 +2,10 @@ div.box, div.cell{
 	display: inline-block;
 }
 
+.box{
+  border: 2px solid black;
+}
+
 .cell input{
 	width: 30px;
 	height: 30px;
@@ -15,4 +19,6 @@ div.box, div.cell{
 body{
 	text-align: center;
 	font-family: Arial;
+
 }
+
