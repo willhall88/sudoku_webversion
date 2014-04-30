@@ -23,22 +23,19 @@ def box_to_row(cells)
   rows = cells.each_slice(27).to_a
   rows.map do |row| 
     a = row.each_slice(9).to_a.map{|box| box.each_slice(3)}
-    a[0].zip(a[1]).zip(a[2]).flatten
-  end
+    a[0].zip(a[1]).zip(a[2])
+  end.flatten
 end
 
 post '/' do
   cells = box_to_row(params['cell'])
+  puts cells.inspect
   session[:current_solution] = cells.map{|value| value.to_i}.join
   session[:check_solution] = true 
-  # puts session
   redirect to("/")
 end
 
-
 get '/' do
- #  sudoku = random_sudoku
- #  session[:solution] = sudoku
   prepare_to_check_solution
   generate_new_puzzle_if_necessary
 	@current_solution = session[:current_solution] || session[:puzzle] 
@@ -64,6 +61,25 @@ get '/solution' do
   @current_solution = session[:solution]
   erb:index
 end
+
+helpers do 
+  def colour_class(solution_to_check,puzzle_value,current_solution_value,solution_value)
+    must_be_guessed = puzzle_view == 0
+    tried_to_guess = current_solution_value.to_i != 0
+    guessed_incorrectly = current_solution_value != solution_value
+
+    if solution_to_check &&
+      must_be_guessed &&
+      tried_to_guess &&
+      guessed_incorrectly
+      'incorrect'
+    elsif !must_be_guessed
+      'value-provided'
+    end
+    
+  end
+end
+
 
 
 

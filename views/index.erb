@@ -9,6 +9,8 @@
 
 	<div id="sudoku">
 	
+	<form action="/" method="post">
+		
 
 		<% 3.times do |row| %>
 			<div class="row">
@@ -20,7 +22,7 @@
 						<div class="cell">
 							<% cell_index = row * 27 + box * 3 + cell_row * 9 + cell %>
 							<% cell_value = @current_solution[cell_index] %>			
-							<input type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>" name="cell[]" >
+							<input class="<%= colour_class %>" type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>" name="cell[]" >
 						</div>
 						<% end %>
 					</div>
@@ -30,7 +32,6 @@
 			</div>
 		<% end %>
 
-		<form action="/" method="post">
 				<button>Check solution</button>
 		</form>
 
