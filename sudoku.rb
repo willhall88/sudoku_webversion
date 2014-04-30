@@ -27,15 +27,44 @@ def box_to_row(cells)
   end
 end
 
+post '/' do
+  cells = box_to_row(params['cell'])
+  session[:current_solution] = cells.map{|value| value.to_i}.join
+  session[:check_solution] = true 
+  # puts session
+  redirect to("/")
+end
+
 
 get '/' do
-  sudoku = random_sudoku
-  session[:solution] = sudoku
-	@current_solution = puzzle(sudoku)
+ #  sudoku = random_sudoku
+ #  session[:solution] = sudoku
+  prepare_to_check_solution
+  generate_new_puzzle_if_necessary
+	@current_solution = session[:current_solution] || session[:puzzle] 
+  @solution = session[:solution]
+  @puzzle = session[:puzzle]
 	erb :index
+end
+
+def generate_new_puzzle_if_necessary
+  return if session[:current_solution]
+  sudoku = random_sudoku
+  session[:solution]=sudoku
+  session[:puzzle]=puzzle(sudoku)
+  session[:current_solution]=session[:puzzle]
+end
+
+def prepare_to_check_solution
+  @check_solution = session[:check_solution]
+  session[:check_solution] = nil
 end
 
 get '/solution' do
   @current_solution = session[:solution]
   erb:index
 end
+
+
+
+
