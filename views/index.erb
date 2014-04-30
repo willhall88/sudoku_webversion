@@ -15,6 +15,7 @@
 				<div class="box">
 					<% 3.times do |cell_row| %>
 					<div class="cell-row">
+
 						<% 3.times do |cell| %>
 						<div class="cell">
 							<% cell_index = row * 27 + box * 3 + cell_row * 9 + cell %>
@@ -23,6 +24,7 @@
 							<input class="<%= colour_class %>" type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>" name="cell[]" >
 						</div>
 						<% end %>
+
 					</div>
 					<% end %>
 				</div>
@@ -30,6 +32,7 @@
 			</div>
 		<% end %>
 		<button class="button">Check solution</button>
+
 
 		</form>
 
