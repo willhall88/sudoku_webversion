@@ -7,8 +7,12 @@ div.box, div.cell{
 }
 
 .cell input{
-	width: 30px;
-	height: 30px;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 18;
+	text-align: center;
+	width: 45px;
+	height: 45px;
 }
 
 #sudoku{
@@ -18,7 +22,7 @@ div.box, div.cell{
 
 body{
 	text-align: center;
-	font-family: Arial;
+	font-family: "Comic Sans MS";
 }
 
 .incorrect {
@@ -26,6 +30,13 @@ body{
 }
 
 .value_provided {
-	background-color: #DDD;
+	background-color: lightgrey; ##DDD;
 }
 
+.button {
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 18;
+	text-align: center;
+	margin-top: 30px;
+}
