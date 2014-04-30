@@ -19,6 +19,13 @@ div.box, div.cell{
 body{
 	text-align: center;
 	font-family: Arial;
+}
 
+.incorrect {
+	background-color: yellow;
+}
+
+.value_provided {
+	background-color: #DDD;
 }
 
