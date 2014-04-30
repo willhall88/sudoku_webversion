@@ -19,6 +19,14 @@ def puzzle(random_sudoku)
   column.to_a.transpose.flatten
 end
 
+def box_to_row(cells)
+  rows = cells.each_slice(27).to_a
+  rows.map do |row| 
+    a = row.each_slice(9).to_a.map{|box| box.each_slice(3)}
+    a[0].zip(a[1]).zip(a[2]).flatten
+  end
+end
+
 
 get '/' do
   sudoku = random_sudoku
