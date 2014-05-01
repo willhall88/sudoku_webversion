@@ -11,13 +11,15 @@
 	<form action="/" method="post">
 	</form>
 	
-	<div id="sudoku">
+	<div class="button2">	
 		<form action="/new game" method="post">
-			<input type = "submit" name="level" value="Easy">
-			<input type = "submit" name="level" value="Medium">
-			<input type = "submit" name="level" value="Hard">
+			<button type = "submit" name="level" value="Easy">Easy</button>
+			<button type = "submit" name="level" value="Medium">Medium</button>
+			<button type = "submit" name="level" value="Hard">Hard</button>
 		</form>
+	</div>
 
+	<div id="sudoku">
 		<form action="/" method="post">
 		<% 3.times do |row| %>
 			<div class="row">
