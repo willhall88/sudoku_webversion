@@ -10,7 +10,14 @@
 	</div>	
 	<form action="/" method="post">
 	</form>
+	
 	<div id="sudoku">
+		<form action="/new game" method="post">
+			<input type = "submit" name="level" value="Easy">
+			<input type = "submit" name="level" value="Medium">
+			<input type = "submit" name="level" value="Hard">
+		</form>
+
 		<form action="/" method="post">
 		<% 3.times do |row| %>
 			<div class="row">
@@ -32,11 +39,8 @@
 			</div>
 		<% end %>
 		<button class="button">Check solution</button>
-
-
 		</form>
-
-</div>
+	</div>
 
 
 </body>

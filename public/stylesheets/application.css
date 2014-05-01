@@ -6,6 +6,7 @@ div.box, div.cell{
 body{
 	text-align: center;
 	font-family: "Comic Sans MS";
+	background-image: (background.jpg);
 }
 
 .box{

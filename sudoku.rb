@@ -23,7 +23,7 @@ end
 
 def rand_select(cells_to_blank, array)
   return array if cells_to_blank == 0
-  random = rand(-0..8)
+  random = rand(0..8)
   if array[random] == '0'
     return rand_select(cells_to_blank, array)
   else
@@ -32,12 +32,9 @@ def rand_select(cells_to_blank, array)
   end
 end
 
-def puzzle(sudoku)
-  boxes = box_to_row(sudoku).each_slice(9).map{|box| rand_select(4, box)}.flatten
+def puzzle(sudoku, difficulty)
+  boxes = box_to_row(sudoku).each_slice(9).map{|box| rand_select(difficulty, box)}.flatten
   rows = box_to_row(boxes)
-  # rows = random_sudoku.each_slice(9).map {|row| rand_select(2, row)}.flatten
-  # column = rows.each_slice(9).to_a.transpose.map {|column| rand_select(2, column) }
-  # column.to_a.transpose.flatten
 end
 
 def box_to_row(cells)
@@ -48,9 +45,17 @@ def box_to_row(cells)
   end.flatten
 end
 
+post '/new game' do
+  difficulty = {"Easy" => 4, "Medium" => 5, "Hard" => 6}
+
+  session[:cells_to_delete] = difficulty[params[:level]]
+  session[:current_solution] = false
+  session[:check_solution] = nil
+  redirect to("/")
+end
+
 post '/' do
   cells = box_to_row(params['cell'])
-  # @difficulty = params[:difficulty]
   session[:current_solution] = cells.map{|value| value.to_i}.join
   session[:check_solution] = true 
   redirect to("/")
@@ -65,11 +70,14 @@ get '/' do
 	erb :index
 end
 
+
+
 def generate_new_puzzle_if_necessary
   return if session[:current_solution]
   sudoku = random_sudoku
   session[:solution]=sudoku
-  session[:puzzle]=puzzle(sudoku)
+  puts session[:cells_to_delete]
+  session[:puzzle]=puzzle(sudoku, session[:cells_to_delete])
   session[:current_solution]=session[:puzzle]
 end
 
@@ -108,8 +116,3 @@ helpers do
   end
 
 end
-
-
-
-
-
