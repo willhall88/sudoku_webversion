@@ -10,6 +10,10 @@ require_relative './lib/cell'
 
 enable :sessions
 
+
+set :session_secret, "This is a secret key to sign the cookie"
+
+
 def random_sudoku
 	seed = (1..9).to_a.shuffle + Array.new(81-9, 0)
 	sudoku = Sudoku.new(seed.join)
