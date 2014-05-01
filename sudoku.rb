@@ -21,12 +21,23 @@ def random_sudoku
 	sudoku.to_s.chars
 end
 
+def rand_select(cells_to_blank, array)
+  return array if cells_to_blank == 0
+  random = rand(-0..8)
+  if array[random] == '0'
+    return rand_select(cells_to_blank, array)
+  else
+    array[random] = '0'
+    rand_select(cells_to_blank-1, array)
+  end
+end
 
-def puzzle(random_sudoku)
-  probabality = 0.15
-  rows = random_sudoku.each_slice(9).map {|row| row.map{|cell| rand()>probabality ? cell : "0"}}.flatten
-  column = rows.each_slice(9).to_a.transpose.map {|row| row.map{|cell| cell != "0" && rand()>probabality ? cell : "0"}}
-  column.to_a.transpose.flatten
+def puzzle(sudoku)
+  boxes = box_to_row(sudoku).each_slice(9).map{|box| rand_select(4, box)}.flatten
+  rows = box_to_row(boxes)
+  # rows = random_sudoku.each_slice(9).map {|row| rand_select(2, row)}.flatten
+  # column = rows.each_slice(9).to_a.transpose.map {|column| rand_select(2, column) }
+  # column.to_a.transpose.flatten
 end
 
 def box_to_row(cells)
@@ -39,7 +50,7 @@ end
 
 post '/' do
   cells = box_to_row(params['cell'])
-  # puts cells.inspect
+  # @difficulty = params[:difficulty]
   session[:current_solution] = cells.map{|value| value.to_i}.join
   session[:check_solution] = true 
   redirect to("/")
