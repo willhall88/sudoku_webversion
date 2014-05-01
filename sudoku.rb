@@ -32,7 +32,7 @@ end
 
 post '/' do
   cells = box_to_row(params['cell'])
-  puts cells.inspect
+  # puts cells.inspect
   session[:current_solution] = cells.map{|value| value.to_i}.join
   session[:check_solution] = true 
   redirect to("/")
