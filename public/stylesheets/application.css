@@ -2,8 +2,19 @@ div.box, div.cell{
 	display: inline-block;
 }
 
+
+body{
+	text-align: center;
+	font-family: "Comic Sans MS";
+}
+
 .box{
   outline: 2px solid black;
+}
+
+
+#flash {
+	margin: 20px;
 }
 
 .cell input{
@@ -24,10 +35,6 @@ div.box, div.cell{
 	text-align: center;
 }
 
-body{
-	text-align: center;
-	font-family: "Comic Sans MS";
-}
 
 .incorrect {
 	background-color: #FFCC66;

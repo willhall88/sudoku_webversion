@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'sinatra/partial'
+require 'rack-flash'
+
+use Rack::Flash
 set :partial_template_engine,:erb
 
 require_relative './lib/sudoku'
@@ -57,6 +60,9 @@ end
 
 def prepare_to_check_solution
   @check_solution = session[:check_solution]
+  if @check_solution
+    flash[:notice] = "Incorrect values are highlighted in yellow"
+  end
   session[:check_solution] = nil
 end
 
