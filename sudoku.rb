@@ -10,6 +10,10 @@ use Rack::Flash
 set :partial_template_engine,:erb
 set :session_secret, "This is a secret key to sign the cookie"
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 require_relative './lib/sudoku'
 require_relative './lib/cell'
 require_relative './lib/web_methods'
