@@ -5,6 +5,10 @@ require 'rack-flash'
 use Rack::Flash
 set :partial_template_engine,:erb
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 require_relative './lib/sudoku'
 require_relative './lib/cell'
 
