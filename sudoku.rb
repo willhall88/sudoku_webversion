@@ -2,6 +2,10 @@ require 'sinatra'
 require 'sinatra/partial'
 require 'rack-flash'
 
+configure :produciotn do
+  require 'newrelic_rpm'
+end
+
 use Rack::Flash
 set :partial_template_engine,:erb
 
