@@ -35,7 +35,7 @@ def rand_select(cells_to_blank, array, max=7)
 end
 
 def puzzle(sudoku, difficulty)
-	difficulty.nil? ? difficulty=4 : difficulty
+	# difficulty.nil? ? difficulty=4 : difficulty
   boxes = box_to_row(sudoku).each_slice(9).map{|box| rand_select(difficulty, box)}.flatten
   rows = box_to_row(boxes)
 end
@@ -65,6 +65,7 @@ post '/' do
 end
 
 get '/' do
+  session[:cells_to_delete] ||= 4
   prepare_to_check_solution
   generate_new_puzzle_if_necessary
 	@current_solution = session[:current_solution] || session[:puzzle] 
@@ -90,6 +91,9 @@ def prepare_to_check_solution
 end
 
 get '/solution' do
+  @solution = session[:solution]
+  @puzzle = session[:puzzle]
+  @check_solution = session[:check_solution]
   @current_solution = session[:solution]
   erb:index
 end
