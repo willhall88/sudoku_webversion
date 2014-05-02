@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/partial'
 require 'rack-flash'
 
-configure :produciotn do
+configure :production do
   require 'newrelic_rpm'
 end
 
