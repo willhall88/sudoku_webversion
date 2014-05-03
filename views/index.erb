@@ -11,13 +11,8 @@
 	<form action="/" method="post">
 	</form>
 	
-	<div class="button2">	
-		<form action="/new game" method="post">
-			<button type = "submit" name="level" value="Easy">Easy</button>
-			<button type = "submit" name="level" value="Medium">Medium</button>
-			<button type = "submit" name="level" value="Hard">Hard</button>
-		</form>
-	</div>
+
+
 
 	<div id="sudoku">
 		<form action="/" method="post">
@@ -27,22 +22,23 @@
 				<div class="box">
 					<% 3.times do |cell_row| %>
 					<div class="cell-row">
-
-						<% 3.times do |cell| %>
-						
+						<% 3.times do |cell| %>						
 						<%= partial :cell, :locals => {:cell_index => row * 27 + box * 3 + cell_row * 9 + cell} %>
-
 						<% end %>
-
 					</div>
 					<% end %>
 				</div>
 				<% end %>
 			</div>
 		<% end %>
-		<button class="button">Check solution</button>
+		<button class="button" value="">Check solution</button>
 		</form>
 	</div>
+		<form action="/new game" method="post">
+			<button class="button" type = "submit" name="level" value="Easy">Easy</button>
+			<button class="button" type = "submit" name="level" value="Medium">Medium</button>
+			<button class="button" type = "submit" name="level" value="Hard">Hard</button>
+		</form>
 
 
 </body>

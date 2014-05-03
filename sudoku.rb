@@ -21,13 +21,13 @@ require_relative './lib/web_methods'
 enable :sessions
 
 
-
 post '/new game' do
   session.clear
   difficulty = {"Easy" => 4, "Medium" => 5, "Hard" => 6}
   session[:cells_to_delete] = difficulty[params[:level]]
   session[:current_solution] = false
   session[:check_solution] = nil
+  session[:saved_game] = false
   redirect to("/")
 end
 
@@ -42,7 +42,8 @@ get '/' do
   session[:cells_to_delete] ||= 4
   prepare_to_check_solution
   generate_new_puzzle_if_necessary
-	@current_solution = session[:current_solution] || session[:puzzle] 
+  @current_solution = session[:current_solution] || session[:puzzle]
+  # @current_solution = session[:current_solution] || session[:puzzle] 
   @solution = session[:solution]
   @puzzle = session[:puzzle]
 	erb :index
