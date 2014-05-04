@@ -5,6 +5,8 @@ div.box, div.cell{
 
 h1{
 	color: #840B1F;
+	text-align: right;
+	margin-right: 40px;
 }
 body{
 	text-align: center;
@@ -31,8 +33,8 @@ body{
 	font-style: bold;
 	font-size: 18;
 	text-align: center;
-	width: 45px;
-	height: 45px;
+	width: 40px;
+	height: 40px;
 	border-color: #B8B8B8 ;
 	border-width: 2px;
 	border-radius: 5px;
@@ -42,7 +44,8 @@ body{
 
 #sudoku{
 	font-size: 0;
-	text-align: center;
+	text-align: right;
+	margin-right: 100px;
 }
 
 
