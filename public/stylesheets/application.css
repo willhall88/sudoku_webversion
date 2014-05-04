@@ -54,15 +54,16 @@ body{
 }
 
 .value_provided {
-	background-color: lightgrey; ##DDD;
+	background-color: #D9DABE; ##DDD;
 }
 
 .button {
-	font-family: "Comic Sans MS";
+	font-family: fantasy;
 	font-style: bold;
 	font-size: 18;
+	color: #840B1F;
 	text-align: center;
 	margin-top: 10px;
 	border-radius: 5px;
-	background-color: white;
+	background-color: #D9DABE;
 }
