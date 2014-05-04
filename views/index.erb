@@ -5,9 +5,6 @@
 </head>
 <body>
 <h1>Life is too short for playing Sudoku</h1>
-	<div id = "flash"> 
-		<%= flash[:notice] %>
-	</div>	
 	<form action="/" method="post">
 	</form>
 	
@@ -34,6 +31,9 @@
 		<button class="button" value="">Check solution</button>
 		</form>
 	</div>
+	<div id = "flash"> 
+		<%= flash[:notice] %>
+	</div>	
 		<form action="/new game" method="post">
 			<button class="easy" type = "submit" name="level" value="Easy">Easy</button>
 			<button class="medium" type = "submit" name="level" value="Medium">Medium</button>

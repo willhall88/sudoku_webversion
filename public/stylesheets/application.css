@@ -24,6 +24,9 @@ body{
 
 
 #flash {
+	position: absolute;
+	top: 90%;
+	right: 1.8%;
 	text-align: right;
 	margin-right: 80px;
 	font-size: 20;
@@ -59,8 +62,9 @@ body{
 
 .button {
 	position: absolute;
-	top: 78%;
-	right: 16.3%;
+	top: 80%;
+	right: 16%;
+	width: 150px;
 	font-family: fantasy;
 	font-style: bold;
 	font-size: 18;
@@ -72,8 +76,8 @@ body{
 
 .easy {
 		position: absolute;
-		top: 25%;
-		right: 40%;
+		top: 36%;
+		right: 39%;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
@@ -85,8 +89,8 @@ body{
 
 .medium {
 		position: absolute;
-		top: 35%;
-		right: 40%;
+		top: 43%;
+		right: 39%;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
@@ -98,8 +102,8 @@ body{
 
 .hard {
 		position: absolute;
-		top: 45%;
-		right: 40%;
+		top: 50%;
+		right: 39%;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
