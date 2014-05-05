@@ -13,7 +13,9 @@ body{
 	font-family: fantasy;
 	font-size: 20px;
 	background-image: url(http://khongthe.com/wallpapers/animals/samurai-sudoku-72200.jpg);
-	background-size: 1300px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+
 }
 
 .box{
@@ -62,8 +64,8 @@ body{
 
 .button {
 	position: absolute;
-	top: 80%;
-	right: 16%;
+	top: 500px;
+	right: 210px;
 	width: 150px;
 	font-family: fantasy;
 	font-style: bold;
@@ -76,8 +78,8 @@ body{
 
 .easy {
 		position: absolute;
-		top: 36%;
-		right: 39%;
+		top: 235px;
+		right: 500px;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
@@ -89,8 +91,8 @@ body{
 
 .medium {
 		position: absolute;
-		top: 43%;
-		right: 39%;
+		top: 275px;
+		right: 500px;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
@@ -102,8 +104,8 @@ body{
 
 .hard {
 		position: absolute;
-		top: 50%;
-		right: 39%;
+		top: 315px;
+		right: 500px;
 		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
