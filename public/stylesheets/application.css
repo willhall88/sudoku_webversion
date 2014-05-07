@@ -62,19 +62,6 @@ body{
 	background-color: #D9DABE; ##DDD;
 }
 
-.button {
-	position: absolute;
-	top: 500px;
-	right: 210px;
-	width: 150px;
-	font-family: fantasy;
-	font-style: bold;
-	font-size: 18;
-	color: #840B1F;
-	text-align: center;
-	border-radius: 5px;
-	background-color: #D9DABE;
-}
 
 .easy {
 		position: absolute;
@@ -107,6 +94,55 @@ body{
 		top: 315px;
 		right: 500px;
 		width: 100px;
+		font-family: fantasy;
+		font-style: bold;
+		font-size: 18;
+		color: #840B1F;
+		border-radius: 5px;
+		background-color: #D9DABE;		
+}
+
+.show {
+		position: absolute;
+		top: 500px;
+		right: 110px;
+		width: 150px;
+		font-family: fantasy;
+		font-style: bold;
+		font-size: 18;
+		color: #840B1F;
+		border-radius: 5px;
+		background-color: #D9DABE;		
+}
+.load {
+		position: absolute;
+		top: 550px;
+		right: 110px;
+		width: 150px;
+		font-family: fantasy;
+		font-style: bold;
+		font-size: 18;
+		color: #840B1F;
+		border-radius: 5px;
+		background-color: #D9DABE;		
+}
+.check {
+		position: absolute;
+		top: 500px;
+		right: 300px;
+		width: 150px;
+		font-family: fantasy;
+		font-style: bold;
+		font-size: 18;
+		color: #840B1F;
+		border-radius: 5px;
+		background-color: #D9DABE;		
+}
+.save {
+		position: absolute;
+		top: 550px;
+		right: 300px;
+		width: 150px;
 		font-family: fantasy;
 		font-style: bold;
 		font-size: 18;

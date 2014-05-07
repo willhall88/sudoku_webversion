@@ -28,7 +28,8 @@
 				<% end %>
 			</div>
 		<% end %>
-		<button class="button" value="">Check solution</button>
+		<button class="check" name="action" value="check_game">Check solution</button>
+		<button class="save" name="action" value="save_game">Save game</button>
 		</form>
 	</div>
 	<div id = "flash"> 
@@ -39,6 +40,9 @@
 		<button class="medium" type = "submit" name="level" value="Medium">Medium</button>
 		<button class="hard" type = "submit" name="level" value="Hard">Hard</button>
 	</form>
+
+	<a href="/solution"><button class="show">Show solution</button></a>
+	<a href="/load_game"><button class="load">Load game</button></a>
 
 
 </body>
