@@ -65,7 +65,7 @@ body{
 
 .easy {
 		position: absolute;
-		top: 235px;
+		top: 255px;
 		right: 500px;
 		width: 100px;
 		font-family: fantasy;
@@ -78,7 +78,7 @@ body{
 
 .medium {
 		position: absolute;
-		top: 275px;
+		top: 300px;
 		right: 500px;
 		width: 100px;
 		font-family: fantasy;
@@ -91,7 +91,7 @@ body{
 
 .hard {
 		position: absolute;
-		top: 315px;
+		top: 345px;
 		right: 500px;
 		width: 100px;
 		font-family: fantasy;
@@ -143,6 +143,19 @@ body{
 		top: 550px;
 		right: 300px;
 		width: 150px;
+		font-family: fantasy;
+		font-style: bold;
+		font-size: 18;
+		color: #840B1F;
+		border-radius: 5px;
+		background-color: #D9DABE;		
+}
+
+.restart {
+		position: absolute;
+		top: 210px;
+		right: 500px;
+		width: 100px;
 		font-family: fantasy;
 		font-style: bold;
 		font-size: 18;
